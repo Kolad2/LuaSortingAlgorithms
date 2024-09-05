@@ -1,6 +1,6 @@
-local algorithms = {}
+local sorts = {}
 
-function algorithms.bogo(array)
+function sorts.bogo(array)
     local function isSorted()
 		for i = 2, #array do
 			if array[i - 1] > array[i] then
@@ -25,7 +25,7 @@ function algorithms.bogo(array)
     return array
 end
 
-function algorithms.bubble(array)
+function sorts.bubble(array)
     for i = 1, #array do
 		for j = 1, #array - i do
 			if array[j] > array[j + 1] then
@@ -37,7 +37,7 @@ function algorithms.bubble(array)
     return array
 end
 
-function algorithms.bucket(array)
+function sorts.bucket(array)
     local function insertion(subArray)
 		for i = 2, #subArray do
 			local key = subArray[i]
@@ -85,7 +85,7 @@ function algorithms.bucket(array)
 	return array
 end
 
-function algorithms.circle(array)
+function sorts.circle(array)
     local function innerCircle(list, low, high, swaps)
 		if low == high then
 			return swaps
@@ -122,7 +122,7 @@ function algorithms.circle(array)
 	return array
 end
 
-function algorithms.cocktail(array)
+function sorts.cocktail(array)
     local swapped
 
     repeat
@@ -150,7 +150,7 @@ function algorithms.cocktail(array)
     return array
 end
 
-function algorithms.comb(array)
+function sorts.comb(array)
     local function getNextGap(gap)
 		gap = math.floor((gap * 10) / 13)
 
@@ -179,7 +179,7 @@ function algorithms.comb(array)
     return array
 end
 
-function algorithms.counting(array)
+function sorts.counting(array)
     local function getMax()
         local value = array[1]
 
@@ -220,7 +220,7 @@ function algorithms.counting(array)
 	return array
 end
 
-function algorithms.cycle(array)
+function sorts.cycle(array)
     local start = 0
 
     while start < #array - 1 do
@@ -270,7 +270,7 @@ function algorithms.cycle(array)
     return array
 end
 
-function algorithms.gnome(array)
+function sorts.gnome(array)
     local i, j = 2, 3
 
     while i <= #array do
@@ -291,7 +291,7 @@ function algorithms.gnome(array)
     return array
 end
 
-function algorithms.gravity(array)
+function sorts.gravity(array)
     local tally = {}
 
     for j = #array, 1, -1 do
@@ -307,7 +307,7 @@ function algorithms.gravity(array)
     return tally
 end
 
-function algorithms.heap(array)
+function sorts.heap(array)
     local function heapify(size, i)
 		local left = 2 * i
 		local right = 2 * i + 1
@@ -344,7 +344,7 @@ function algorithms.heap(array)
 	return array
 end
 
-function algorithms.insertion(array)
+function sorts.insertion(array)
     for i = 2, #array do
 		local key = array[i]
 		local j = i - 1
@@ -360,7 +360,7 @@ function algorithms.insertion(array)
     return array
 end
 
-function algorithms.merge(array)
+function sorts.merge(array)
     local function mergeSort(low, mid, high)
 		local n1 = mid - low + 1
 		local n2 = high - mid
@@ -405,7 +405,7 @@ function algorithms.merge(array)
     return sort(1, #array)
 end
 
-function algorithms.pancake(array)
+function sorts.pancake(array)
     local function flip(i)
 		local start = 1
 
@@ -444,7 +444,7 @@ function algorithms.pancake(array)
     return array
 end
 
-function algorithms.pigeonhole(array)
+function sorts.pigeonhole(array)
     local holes = {}
 
     for i = 1, #array do
@@ -467,7 +467,7 @@ function algorithms.pigeonhole(array)
     return array
 end
 
-function algorithms.quick(array)
+function sorts.quick(array)
     local function partition(low, high)
 		local pivot = array[high]
 		local i = low - 1
@@ -497,7 +497,7 @@ function algorithms.quick(array)
 	return sort(1, #array)
 end
 
-function algorithms.radix(array)
+function sorts.radix(array)
     local function counting(exp)
 		local n = #array
         local output = {}
@@ -556,7 +556,7 @@ function algorithms.radix(array)
 	return array
 end
 
-function algorithms.selection(array)
+function sorts.selection(array)
     for i = 1, #array do
 		local min = i
 
@@ -572,7 +572,7 @@ function algorithms.selection(array)
     return array
 end
 
-function algorithms.shell(array)
+function sorts.shell(array)
     local gap = math.floor(#array / 2)
 
     while gap > 0 do
@@ -600,7 +600,7 @@ function algorithms.shell(array)
 	return array
 end
 
-function algorithms.stooge(array)
+function sorts.stooge(array)
     local function sort(low, high)
 		if low >= high then
 			return
@@ -623,7 +623,7 @@ function algorithms.stooge(array)
 	return sort(1, #array)
 end
 
-function algorithms.strand(array)
+function sorts.strand(array)
     local function merge(a, b)
 		local output = {}
 		while #a > 0 and #b > 0 do
@@ -669,4 +669,4 @@ function algorithms.strand(array)
     return output
 end
 
-return algorithms
+return sorts
