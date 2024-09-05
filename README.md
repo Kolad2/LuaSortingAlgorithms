@@ -1,9 +1,18 @@
 # Implementation of 20+ sorting algorithms in Lua and Luau
 
+forked from https://github.com/DervexDev/LuaSortingAlgorithms
+
 All algorithms have been ported from Python which can be found on [GeeksforGeeks](https://www.geeksforgeeks.org/sorting-algorithms/) site. Every file is ready to use module which can be imported!
 
 ## This repository features following algorithms:
-* Bogo Sort
+
+<details>
+<summary> Bogo Sort </summary>
+Bogo может зависает нахождении в масиве одинаковых элементов.
+Это связано с тем,
+что алгоритм основывается на случайной перестановке.
+</details>
+
 * Bubble Sort
 * Bucket Sort
 * Circle Sort

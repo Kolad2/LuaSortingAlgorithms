@@ -1,13 +1,13 @@
-local sorts = {}
+sorts = {}
 
 function sorts.bogo(array)
+
     local function isSorted()
 		for i = 2, #array do
 			if array[i - 1] > array[i] then
 				return false
 			end
 		end
-
 		return true
 	end
 
