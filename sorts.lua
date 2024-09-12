@@ -4,7 +4,7 @@ function sorts.bogo(array)
 
     local function isSorted()
 		for i = 2, #array do
-			if array[i - 1] > array[i] then
+			if array[i - 1] >= array[i] then
 				return false
 			end
 		end
