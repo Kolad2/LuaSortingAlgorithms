@@ -6,8 +6,8 @@ This repository forked from https://github.com/DervexDev/LuaSortingAlgorithms
 git clone https://github.com/Kolad2/war3-lua-sorts.git sorts
 ```
 
-## This repository features following algorithms:
-# float supports
+# This repository features following algorithms:
+## float supports
 * Cycle Sort
 * Gnome Sort
 * Circle Sort
