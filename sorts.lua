@@ -381,13 +381,14 @@ end
 
 
 function sorts.pigeonhole(array)
+    print(1)
     local holes = {}
 
     for i = 1, #array do
         holes[i] = 0
     end
 
-    for _, v in ipairs(array) do
+    for v,_ in ipairs(array) do
         holes[v] = holes[v] + 1
     end
 
@@ -399,7 +400,6 @@ function sorts.pigeonhole(array)
             i = i + 1
         end
     end
-
     return array
 end
 
