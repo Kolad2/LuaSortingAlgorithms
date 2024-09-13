@@ -12,15 +12,6 @@ sorts = {}
 -- not stable
 -- [[bucket]] --
 
-function table.is_sorted(tbl)
-    for i = 2, #array do
-        if tbl[i - 1] >= tbl[i] then
-            return false
-        end
-    end
-    return true
-end
-
 
 function sorts.bubble(array)
     for i = 1, #array do
@@ -341,9 +332,9 @@ end
 
 
 function sorts.pancake(array)
-    local function flip(i)
-        local start = 1
 
+    local function flip(array, i)
+        local start = 1
         while start < i do
             array[i], array[start] = array[start], array[i]
             start = start + 1
@@ -351,7 +342,7 @@ function sorts.pancake(array)
         end
     end
 
-    local function findMax(n)
+    local function find_argmax(array, n)
         local max = 1
 
         for i = 1, n do
@@ -359,18 +350,17 @@ function sorts.pancake(array)
                 max = i
             end
         end
-
         return max
     end
 
     local size = #array
 
     while size > 1 do
-        local max = findMax(size)
+        local max = find_argmax(array, size)
 
         if max ~= size then
-            flip(max)
-            flip(size)
+            flip(array, max)
+            flip(array, size)
         end
 
         size = size - 1
@@ -381,7 +371,6 @@ end
 
 
 function sorts.pigeonhole(array)
-    print(1)
     local holes = {}
 
     for i = 1, #array do
