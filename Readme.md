@@ -23,10 +23,3 @@ git clone https://github.com/Kolad2/war3-lua-sorts.git sorts
 * Pigeonhole Sort
 * Quick Sort
 * Bucket Sort - not recommended
-
-* Counting Sort
-* Gravity (Bead) Sort
-* Radix Sort
-* Selection Sort
-* Strand Sort
-* Bogo Sort
