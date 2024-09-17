@@ -1,7 +1,6 @@
 sorts = {}
 
 function sorts.bogo(array)
-
     local function isSorted()
 		for i = 2, #array do
 			if array[i - 1] >= array[i] then
@@ -21,18 +20,6 @@ function sorts.bogo(array)
     while not isSorted() do
         shuffle()
     end
-
-    return array
-end
-
-function sorts.bubble(array)
-    for i = 1, #array do
-		for j = 1, #array - i do
-			if array[j] > array[j + 1] then
-				array[j], array[j + 1] = array[j + 1], array[j]
-			end
-		end
-	end
 
     return array
 end
